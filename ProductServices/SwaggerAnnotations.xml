@@ -4,7 +4,7 @@
         <name>ProductServices</name>
     </assembly>
     <members>
-        <member name="M:ProductServices.Controllers.ItemController.GetProductItems(System.Int32)">
+        <member name="M:ProductServices.Controllers.ItemsController.GetProductItems(System.Int32)">
             <summary>
             Get items of a specific product by unique id
             </summary>

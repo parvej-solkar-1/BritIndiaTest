@@ -8,15 +8,15 @@ namespace ProductServices.Controllers
     [Route("api/products/{productId}/[controller]")]
     //[Authorize]
     [ApiController]
-    public class ItemController : ControllerBase
+    public class ItemsController : ControllerBase
     {
         private readonly IMapper _mapper;
         private readonly IItemService _itemService;
-        private readonly ILogger<ItemController> _logger;
+        private readonly ILogger<ItemsController> _logger;
 
-        public ItemController(
+        public ItemsController(
             IMapper mapper,
-            ILogger<ItemController> logger,
+            ILogger<ItemsController> logger,
             IItemService itemService)
         {
             _mapper = mapper;

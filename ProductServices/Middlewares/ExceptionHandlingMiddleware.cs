@@ -31,14 +31,14 @@ namespace ProductServices.Middlewares
             _logger.LogError(exception, exception.Message, exception.InnerException);
             var response = exception switch
             {
-                ApplicationException _ => new ExceptionResponseDto("Bad Request", exception.Message),
-                EntityNotFoundException _ => new ExceptionResponseDto("Not Found", exception.Message),
-                UnauthorizedAccessException _ => new ExceptionResponseDto("Unauthorized user", exception.Message),
-                _ => new ExceptionResponseDto("Internal Server error", exception.Message)
+                ApplicationException _ => new ExceptionResponseDto("Bad Request", exception.Message, StatusCodes.Status400BadRequest),
+                EntityNotFoundException _ => new ExceptionResponseDto("Not Found", exception.Message, StatusCodes.Status404NotFound),
+                UnauthorizedAccessException _ => new ExceptionResponseDto("Unauthorized user", exception.Message, StatusCodes.Status401Unauthorized),
+                _ => new ExceptionResponseDto("Internal Server error", exception.Message, StatusCodes.Status500InternalServerError)
             };
 
             context.Response.ContentType = "application/json";
-            context.Response.StatusCode = context.Response.StatusCode;
+            context.Response.StatusCode = response.StatusCode;
             await context.Response.WriteAsJsonAsync(response);
         }
     }
