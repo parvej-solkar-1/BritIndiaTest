@@ -1,0 +1,64 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ProductServices</name>
+    </assembly>
+    <members>
+        <member name="M:ProductServices.Controllers.ItemController.GetProductItems(System.Int32)">
+            <summary>
+            Get items of a specific product by unique id
+            </summary>
+            <remarks>Product id needs to be valid and existing</remarks>
+            <response code="200">Product created</response>
+            <response code="404">Product id does not exists</response>
+            <param  name="id">Product Id</param>
+        </member>
+        <member name="M:ProductServices.Controllers.ProductsController.GetProducts">
+            <summary>
+            Get all products
+            </summary>
+            <response code="200">Fetched all products successfully</response>
+        </member>
+        <member name="M:ProductServices.Controllers.ProductsController.GetProduct(System.Int32)">
+            <summary>
+            Get a specific product by unique id
+            </summary>
+            <remarks>Product id needs to be valid and existing</remarks>
+            <response code="200">Product created</response>
+            <response code="404">Product id does not exists</response>
+            <param  name="id">Product Id</param>
+        </member>
+        <member name="M:ProductServices.Controllers.ProductsController.UpdateProduct(System.Int32,ProductServices.DTOs.Product.ProductDto)">
+            <summary>
+            Updates a specific product by unique id
+            </summary>
+            <remarks>Product id needs to be valid and existing</remarks>
+            <response code="200">Product created</response>
+            <response code="400">Bad/ Invalid input by the user</response>
+            <response code="404">Product id does not exists</response>
+            <response code="500">Something wrong at server side</response>
+            <param  name="id">Product Id</param>
+            <param name="productDto">Product details</param>
+        </member>
+        <member name="M:ProductServices.Controllers.ProductsController.CreateProduct(ProductServices.DTOs.Product.ProductDto)">
+            <summary>
+            Creates a product
+            </summary>
+            <response code="200">Product created</response>
+            <response code="400">Bad/ Invalid input by the user</response>
+            <response code="500">Something wrong at server side</response>
+            <param name="productDto">Product details</param>
+        </member>
+        <member name="M:ProductServices.Controllers.ProductsController.DeleteProduct(System.Int32)">
+            <summary>
+            Delete a specific product by unique id
+            </summary>
+            <remarks>Product id needs to be valid and existing</remarks>
+            <response code="200">Product created</response>
+            <response code="400">Bad/ Invalid input by the user</response>
+            <response code="404">Product id does not exists</response>
+            <response code="500">Something wrong at server side</response>
+            <param  name="id">Product Id</param>
+        </member>
+    </members>
+</doc>
